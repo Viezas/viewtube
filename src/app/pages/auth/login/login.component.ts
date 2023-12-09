@@ -32,6 +32,7 @@ export class LoginComponent {
   }
 
   submit() {
+    // TODO: handle submit
     console.log('handle submit');
   }
 }

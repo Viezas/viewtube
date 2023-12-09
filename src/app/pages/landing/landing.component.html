@@ -1,3 +1,13 @@
 <app-guest-layout>
-  <div>Landing page</div>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+  >
+    <!-- TODO: Replace with true content once resources are set up -->
+    <app-video *ngFor="let index of [1, 2, 3, 4, 5]; let key = index">
+      <h3 title>Title for video n°{{ index }}</h3>
+      <p description>
+        {{ "Uploader name here" | substring : 50 }}
+      </p>
+    </app-video>
+  </div>
 </app-guest-layout>

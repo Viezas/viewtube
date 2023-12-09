@@ -1,0 +1,15 @@
+<!-- TODO: Add link to show page when route is created -->
+<div class="bg-synth-dark-950 rounded-md hover:cursor-pointer hover:underline">
+  <iframe
+    class="w-full h-56 rounded-t-md"
+    src="https://www.youtube.com/embed/L8gfqbPGako?si=3J4UchPlTxq3CrXf"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+  <div class="p-4">
+    <ng-content select="[title]"></ng-content>
+    <ng-content select="[description]"></ng-content>
+  </div>
+</div>

@@ -4,6 +4,7 @@
     [formGroup]="loginForm"
     (ngSubmit)="submit()"
   >
+    <!-- TODO: Add remaining inputs and handle submit -->
     <app-input
       [value]="loginForm.value.email"
       (newValue)="updateValue('email', $event)"
