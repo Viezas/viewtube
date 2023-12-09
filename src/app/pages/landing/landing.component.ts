@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GuestLayoutComponent } from '../../layout/guest-layout/guest-layout.component';
 import { VideoComponent } from '../../components/video/video.component';
-import { SubstringPipe } from '../../pipe/substring.pipe';
+import { SubstringPipe } from '../../pipe/substring/substring.pipe';
 
 @Component({
   selector: 'app-landing',
@@ -11,6 +11,4 @@ import { SubstringPipe } from '../../pipe/substring.pipe';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
-export class LandingComponent {
-
-}
+export class LandingComponent {}

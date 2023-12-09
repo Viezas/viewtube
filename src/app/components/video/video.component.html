@@ -1,13 +1,21 @@
 <!-- TODO: Add link to show page when route is created -->
 <div class="bg-synth-dark-950 rounded-md hover:cursor-pointer hover:underline">
   <iframe
+    *ngIf="url != ''; else showPlaceholder"
     class="w-full h-56 rounded-t-md"
-    src="https://www.youtube.com/embed/L8gfqbPGako?si=3J4UchPlTxq3CrXf"
+    [src]="url | sanitize : 'url'"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
   ></iframe>
+  <ng-template #showPlaceholder>
+    <img
+      src="/assets/img/placeholder.png"
+      alt="logo placeholder"
+      class="w-full h-56 rounded-t-md"
+    />
+  </ng-template>
   <div class="p-4">
     <ng-content select="[title]"></ng-content>
     <ng-content select="[description]"></ng-content>

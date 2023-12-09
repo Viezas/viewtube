@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputComponent {
   @Input() value: any;
-  @Input() type: String = 'text';
+  @Input() type: string = 'text';
   @Input() disabled: boolean = false;
   @Input() required: boolean = false;
   @Output() newValue = new EventEmitter<object>()
