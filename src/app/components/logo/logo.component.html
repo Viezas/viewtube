@@ -1,0 +1,6 @@
+<a *ngIf="clickable; else showBaseLogo" routerLink="/">
+  <img src="/assets/img/placeholder.png" alt="logo placeholder" class="w-20" />
+</a>
+<ng-template #showBaseLogo>
+  <img src="/assets/img/placeholder.png" alt="logo placeholder" class="w-20" />
+</ng-template>
