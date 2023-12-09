@@ -1,0 +1,17 @@
+<label>
+  <div class="flex">
+    <ng-content select="[label]"></ng-content>
+    <span *ngIf="required" class="text-red-500">*</span>
+  </div>
+  <input
+    [type]="type"
+    [disabled]="disabled"
+    [required]="required"
+    [(ngModel)]="value"
+    (ngModelChange)="modelChangeFn($event)"
+    class="px-2 py-1 border rounded-md w-full"
+  />
+  <div class="text-red-500">
+    <ng-content select="[errors]"></ng-content>
+  </div>
+</label>

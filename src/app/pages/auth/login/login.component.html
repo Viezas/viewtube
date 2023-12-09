@@ -1,3 +1,31 @@
 <app-guest-layout>
-  <div>Login page</div>
+  <form
+    class="flex flex-col gap-y-4"
+    [formGroup]="loginForm"
+    (ngSubmit)="submit()"
+  >
+    <app-input
+      [value]="loginForm.value.email"
+      (newValue)="updateValue('email', $event)"
+      [required]="true"
+    >
+      <p label>Email</p>
+      <div errors>
+        <small *ngIf="loginForm.get('email')?.hasError('required')">
+          This field is required.
+        </small>
+        <small *ngIf="loginForm.get('email')?.hasError('email')">
+          This field must be a valid email
+        </small>
+      </div>
+    </app-input>
+
+    <button
+      [disabled]="!this.loginForm.valid"
+      type="submit"
+      class="py-2 text-white rounded-md bg-synth-blue-400 hover:bg-synth-blue-500 disabled:bg-synth-blue-300"
+    >
+      Connexion
+    </button>
+  </form>
 </app-guest-layout>

@@ -7,7 +7,7 @@ import { GuestLayoutComponent } from '../../layout/guest-layout/guest-layout.com
   standalone: true,
   imports: [CommonModule, GuestLayoutComponent],
   templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css'
+  styleUrl: './landing.component.css',
 })
 export class LandingComponent {
 
