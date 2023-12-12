@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SanitizePipe } from '../../pipe/sanitize/sanitize.pipe';
+import { VideoThumbnailPipe } from '../../pipe/video-thumbnail/video-thumbnail.pipe';
 
 @Component({
   selector: 'app-video',
   standalone: true,
-  imports: [CommonModule, SanitizePipe],
+  imports: [CommonModule, VideoThumbnailPipe],
   templateUrl: './video.component.html',
   styleUrl: './video.component.css',
 })

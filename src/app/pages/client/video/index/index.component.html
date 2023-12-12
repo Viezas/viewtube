@@ -1,1 +1,19 @@
-<p>index works!</p>
+<app-client-layout>
+  <div class="flex flex-col gap-y-10">
+    <h1 appPageTitle>Mes videos</h1>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+    >
+      <!-- TODO: Replace with true content once resources are set up -->
+      <app-video
+        *ngFor="let index of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; let key = index"
+        [url]="'https://www.youtube.com/embed/L7-c-LbNq9I?si=iMUMrsbZhgQJrsNu'"
+      >
+        <h3 title>Title for video n°{{ index }}</h3>
+        <p description>
+          {{ "Description name here" | substring : 50 }}
+        </p>
+      </app-video>
+    </div>
+  </div>
+</app-client-layout>

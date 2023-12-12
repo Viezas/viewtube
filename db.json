@@ -10,5 +10,15 @@
       "email": "viewtuber-1@test.com",
       "password": "Password-1234"
     }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "My Ordinary Life - The Living Tombstone",
+      "description": "Get ready for an Original Song, My Ordinary Life! Inspired by music from the Japanese cartoon Nichijou by Kyoto Animation and Nomi Yuuji.",
+      "url": "https://www.youtube.com/embed/9Zj0JOHJR-s?si=8HJ-oywxio_58gFR",
+      "views": 10
+    }
   ]
 }
