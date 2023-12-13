@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { DashboardComponent } from './pages/client/dashboard/dashboard.component';
 import { IndexComponent as VideoIndex } from './pages/client/video/index/index.component';
+import { FormComponent as VideoForm } from './pages/client/video/form/form/form.component';
 
 export const routes: Routes = [
   { path: '', title: 'Home', component: LandingComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'register', title: 'Register', component: RegisterComponent },
   { path: 'dashboard', title: 'Dashboard', component: DashboardComponent },
   { path: 'videos', title: 'Videos', component: VideoIndex },
+  { path: 'videos/create', title: 'Videos - upload', component: VideoForm },
   { path: '**', redirectTo: '' },
 ];

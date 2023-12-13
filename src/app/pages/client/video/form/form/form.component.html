@@ -1,0 +1,57 @@
+<app-client-layout>
+  <div class="flex flex-col gap-y-10">
+    <h1 appPageTitle>Uploader une nouvelle video</h1>
+    <div class="grid grid-cols-2 gap-8">
+      <form
+        class="flex flex-col gap-y-4"
+        [formGroup]="form"
+        (ngSubmit)="handleSubmit()"
+      >
+        <app-input
+          [value]="form.value.title"
+          (newValue)="updateValue('title', $event)"
+          [required]="true"
+        >
+          <p label>Titre</p>
+          <div errors>
+            <small *ngIf="form.get('title')?.hasError('required')">
+              This field is required.
+            </small>
+          </div>
+        </app-input>
+
+        <app-input
+          [value]="form.value.url"
+          (newValue)="updateValue('url', $event)"
+          [required]="true"
+          [type]="'url'"
+        >
+          <p label>Url</p>
+          <div errors>
+            <small *ngIf="form.get('url')?.hasError('required')">
+              This field is required.
+            </small>
+            <small *ngIf="form.get('url')?.hasError('urlInvalid')">
+              Provided url is invalid. Must be a youtube embed url
+            </small>
+          </div>
+        </app-input>
+
+        <app-input
+          [value]="form.value.description"
+          (newValue)="updateValue('description', $event)"
+          [type]="'textarea'"
+        >
+          <p label>Description</p>
+        </app-input>
+        <button
+          [disabled]="!this.form.valid"
+          type="submit"
+          class="w-fit self-end px-4 py-2 text-white rounded-md bg-synth-blue-500 hover:bg-synth-blue-600 disabled:bg-synth-blue-200"
+        >
+          Uploader
+        </button>
+      </form>
+    </div>
+  </div>
+</app-client-layout>

@@ -4,6 +4,7 @@ import { ClientLayoutComponent } from '../../../../layout/client-layout/client-l
 import { PageTitleDirective } from '../../../../directive/page-title/page-title.directive';
 import { VideoComponent } from '../../../../components/video/video.component';
 import { SubstringPipe } from '../../../../pipe/substring/substring.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -14,6 +15,7 @@ import { SubstringPipe } from '../../../../pipe/substring/substring.pipe';
     PageTitleDirective,
     VideoComponent,
     SubstringPipe,
+    RouterLink
   ],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css',

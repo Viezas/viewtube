@@ -1,10 +1,10 @@
-<div class="min-h-[100vh] bg-synth-gray-950 flex flex-row text-synth-blue-400">
+<div class="h-[100vh] bg-synth-gray-950 flex flex-row text-synth-blue-400">
   <div
     class="w-52 py-4 flex flex-col justify-start items-center gap-y-4 bg-synth-pink-950"
   >
     <app-logo></app-logo>
     <div
-      class="w-full h-full py-4 border-t border-synth-blue-400 flex flex-col items-end gap-y-2"
+      class="w-full h-full max-h-[100vh] py-4 border-t border-synth-blue-400 flex flex-col items-end gap-y-2"
     >
       <a
         routerLink="/dashboard"
@@ -16,7 +16,7 @@
       <a
         routerLink="/videos"
         class="p-2 w-11/12 hover:underline hover:cursor-pointer rounded-l-lg hover:bg-synth-gray-950"
-        [ngClass]="{ 'bg-synth-gray-950': currentRoute == '/videos' }"
+        [ngClass]="{ 'bg-synth-gray-950': currentRoute.startsWith('/videos') }"
       >
         Mes video
       </a>
@@ -35,7 +35,7 @@
       </a>
     </div>
   </div>
-  <div class="w-full p-10">
+  <div class="w-full p-10 overflow-y-scroll">
     <ng-content></ng-content>
   </div>
 </div>

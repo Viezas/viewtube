@@ -4,6 +4,7 @@
     <span *ngIf="required" class="text-red-500">*</span>
   </div>
   <input
+    *ngIf="type != 'textarea'; else showTextarea"
     [type]="type"
     [disabled]="disabled"
     [required]="required"
@@ -11,6 +12,17 @@
     (ngModelChange)="modelChangeFn($event)"
     class="px-2 py-1 border rounded-md w-full"
   />
+  <ng-template #showTextarea>
+    <textarea
+      [disabled]="disabled"
+      [required]="required"
+      [(ngModel)]="value"
+      (ngModelChange)="modelChangeFn($event)"
+      rows="6"
+      class="px-2 py-1 border rounded-md w-full resize-none"
+      >{{ value }}</textarea
+    >
+  </ng-template>
   <div class="text-red-500">
     <ng-content select="[errors]"></ng-content>
   </div>
