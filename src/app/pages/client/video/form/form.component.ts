@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientLayoutComponent } from '../../../../../layout/client-layout/client-layout.component';
-import { PageTitleDirective } from '../../../../../directive/page-title/page-title.directive';
+import { ClientLayoutComponent } from '../../../../layout/client-layout/client-layout.component';
+import { PageTitleDirective } from '../../../../directive/page-title/page-title.directive';
 import { Router, RouterLink } from '@angular/router';
 import {
   AbstractControl,
@@ -9,8 +9,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { InputComponent } from '../../../../../components/form/input/input.component';
-import { VideoService } from '../../../../../service/video/video.service';
+import { InputComponent } from '../../../../components/form/input/input.component';
+import { VideoService } from '../../../../service/video/video.service';
 
 @Component({
   selector: 'app-form',

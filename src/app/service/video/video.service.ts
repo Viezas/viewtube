@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Video } from '../../model/video/video.model';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Observable, catchError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +10,15 @@ export class VideoService {
   private videos: Video[] = [];
 
   constructor(private http: HttpClient) {}
+
+  /**
+   * Return all videos
+   *
+   * @returns {Video[]}
+   */
+   all() {
+    return this.http.get('http://localhost:3000/videos');
+  }
 
   /**
    * Store a new video resource in db

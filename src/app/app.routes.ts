@@ -4,7 +4,7 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { DashboardComponent } from './pages/client/dashboard/dashboard.component';
 import { IndexComponent as VideoIndex } from './pages/client/video/index/index.component';
-import { FormComponent as VideoForm } from './pages/client/video/form/form/form.component';
+import { FormComponent as VideoForm } from './pages/client/video/form/form.component';
 
 export const routes: Routes = [
   { path: '', title: 'Home', component: LandingComponent },

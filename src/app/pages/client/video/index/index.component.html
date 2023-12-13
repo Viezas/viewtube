@@ -1,20 +1,24 @@
 <app-client-layout>
   <div class="flex flex-col gap-y-10">
     <h1 appPageTitle>Mes videos</h1>
-    <a href="/videos/create" class="w-fit p-2 rounded-md bg-synth-blue-500 hover:bg-synth-blue-600 text-white self-end">Uploader une video</a>
+    <a
+      href="/videos/create"
+      class="w-fit p-2 rounded-md bg-synth-blue-500 hover:bg-synth-blue-600 text-white self-end"
+      >Uploader une video</a
+    >
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
     >
-      <!-- TODO: Replace with true content once resources are set up -->
       <app-video
-        *ngFor="let index of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; let key = index"
-        [url]="'https://www.youtube.com/embed/L7-c-LbNq9I?si=iMUMrsbZhgQJrsNu'"
+        *ngFor="let video of videos; let key = index"
+        [url]="video.url"
       >
-        <h3 title>Title for video n°{{ index }}</h3>
-        <p description>
-          {{ "Description name here" | substring : 50 }}
+        <h3 title>{{ video.title | substring : 40 }}</h3>
+        <p class="mt-2" description>
+          {{ video.description ?? "" | substring : 50 }}
         </p>
       </app-video>
+      <p *ngIf="videos.length === 0" class="col-span-full text-center">Pas de video à afficher</p>
     </div>
   </div>
 </app-client-layout>
