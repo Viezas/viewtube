@@ -1,0 +1,29 @@
+<app-guest-layout>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+  >
+    <div class="col-span-3">
+      <iframe
+        class="w-full h-96 rounded-md"
+        [src]="video?.url ?? '' | sanitize : 'url'"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+      <div class="py-4">
+        <h3 class="text-xl font-semibold">{{ video?.title }}</h3>
+        <p
+          *ngIf="video?.description"
+          class="mt-2 bg-synth-dark-950 rounded-md p-4"
+        >
+          {{ video?.description }}
+        </p>
+      </div>
+    </div>
+    <div class="col-span-1 grid grid-cols-1 gap-y-4">
+      <app-video
+        *ngFor="let video of videos; let key = index"
+        [video]="video"
+      ></app-video>
+    </div>
+  </div>
+</app-guest-layout>

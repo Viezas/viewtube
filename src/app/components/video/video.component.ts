@@ -21,9 +21,18 @@ export class VideoComponent {
   }
 
   redirect() {
+    if (this.currentRoute.startsWith('/video/')) {
+      this.router.navigate(['/video/' + this.video.id]);
+      return;
+    }
+    
     switch (this.currentRoute) {
       case '/videos':
         this.router.navigate(['/videos/' + this.video.id]);
+        break;
+
+      case '/':
+        this.router.navigate(['/video/' + this.video.id]);
         break;
 
       default:

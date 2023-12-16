@@ -5,9 +5,11 @@ import { RegisterComponent } from './pages/auth/register/register.component';
 import { DashboardComponent } from './pages/client/dashboard/dashboard.component';
 import { IndexComponent as VideoIndex } from './pages/client/video/index/index.component';
 import { FormComponent as VideoForm } from './pages/client/video/form/form.component';
+import { ShowComponent as ShowVideo } from './pages/video/show/show.component';
 
 export const routes: Routes = [
   { path: '', title: 'Home', component: LandingComponent },
+  { path: 'video/:id', title: 'Home', component: ShowVideo },
   { path: 'login', title: 'Login', component: LoginComponent },
   { path: 'register', title: 'Register', component: RegisterComponent },
   { path: 'dashboard', title: 'Dashboard', component: DashboardComponent },
