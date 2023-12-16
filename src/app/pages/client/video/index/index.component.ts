@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ClientLayoutComponent } from '../../../../layout/client-layout/client-layout.component';
 import { PageTitleDirective } from '../../../../directive/page-title/page-title.directive';
 import { VideoComponent } from '../../../../components/video/video.component';
-import { SubstringPipe } from '../../../../pipe/substring/substring.pipe';
 import { RouterLink } from '@angular/router';
 import { VideoService } from '../../../../service/video/video.service';
 import { Video } from '../../../../model/video/video.model';
@@ -16,7 +15,6 @@ import { Video } from '../../../../model/video/video.model';
     ClientLayoutComponent,
     PageTitleDirective,
     VideoComponent,
-    SubstringPipe,
     RouterLink,
   ],
   templateUrl: './index.component.html',

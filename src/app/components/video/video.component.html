@@ -1,8 +1,7 @@
-<!-- TODO: Add link to show page when route is created -->
-<div class="h-full bg-synth-dark-950 rounded-md hover:cursor-pointer hover:underline">
-  <img [src]="url | videoThumbnail" class="w-full h-56 rounded-t-md" />
+<div (click)="redirect()" class="h-full bg-synth-dark-950 rounded-md hover:cursor-pointer hover:underline">
+  <img [src]="video.url | videoThumbnail" class="w-full h-56 rounded-t-md" />
   <div class="p-4">
-    <ng-content select="[title]"></ng-content>
-    <ng-content select="[description]"></ng-content>
+    <h3>{{ video.title | substring : 40 }}</h3>
+    <p class="mt-2">{{ video.description ?? "" | substring : 50 }}</p>
   </div>
 </div>

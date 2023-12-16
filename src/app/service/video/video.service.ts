@@ -16,8 +16,28 @@ export class VideoService {
    *
    * @returns {Video[]}
    */
-   all() {
+  all() {
     return this.http.get('http://localhost:3000/videos');
+  }
+
+  /**
+   * Return and paginate all videos
+   *
+   * @param {number|string} limit
+   * @returns {Video[]}
+   */
+  paginate(limit: number | string = 10) {
+    return this.http.get('http://localhost:3000/videos?_limit=' + limit);
+  }
+
+  /**
+   * Find a return a video
+   *
+   * @param {number|string} id
+   * @returns {Video}
+   */
+  find(videoId: number | string) {
+    return this.http.get('http://localhost:3000/videos/' + videoId);
   }
 
   /**
@@ -33,11 +53,29 @@ export class VideoService {
     description: string | null
   ): Observable<Video> {
     const video = new Video(title, url, description, 1);
-    // this.http
-    //   .post<Video>('http://localhost:3000/videos', video)
-    //   .subscribe((video) => {
-    //     this.videos.push(video);
-    //   });
+
     return this.http.post<Video>('http://localhost:3000/videos', video);
+  }
+
+  /**
+   * Update a video resource in db
+   *
+   * @param {number|string} videoId
+   * @param {string} title
+   * @param {string} url
+   * @param {string|null} description
+   */
+  update(
+    videoId: number | string,
+    title: string,
+    url: string,
+    description: string | null
+  ): Observable<Video> {
+    const video = new Video(title, url, description, 1);
+
+    return this.http.put<Video>(
+      'http://localhost:3000/videos/' + videoId,
+      video
+    );
   }
 }

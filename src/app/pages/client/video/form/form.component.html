@@ -1,6 +1,8 @@
 <app-client-layout>
   <div class="flex flex-col gap-y-10">
-    <h1 appPageTitle>Uploader une nouvelle video</h1>
+    <h1 appPageTitle>
+      {{ video ? "Éditer une video" : "Uploader une nouvelle video" }}
+    </h1>
     <div class="grid grid-cols-2 gap-8">
       <form
         class="flex flex-col gap-y-4"
@@ -49,7 +51,7 @@
           type="submit"
           class="w-fit self-end px-4 py-2 text-white rounded-md bg-synth-blue-500 hover:bg-synth-blue-600 disabled:bg-synth-blue-200"
         >
-          Uploader
+          {{ video ? "Éditer" : "Uploader" }}
         </button>
       </form>
     </div>

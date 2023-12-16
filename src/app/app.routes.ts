@@ -13,5 +13,6 @@ export const routes: Routes = [
   { path: 'dashboard', title: 'Dashboard', component: DashboardComponent },
   { path: 'videos', title: 'Videos', component: VideoIndex },
   { path: 'videos/create', title: 'Videos - upload', component: VideoForm },
+  { path: 'videos/:id', title: 'Videos - edit', component: VideoForm },
   { path: '**', redirectTo: '' },
 ];
