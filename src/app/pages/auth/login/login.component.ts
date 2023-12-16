@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { GuestLayoutComponent } from '../../../layout/guest-layout/guest-layout.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputComponent } from '../../../components/form/input/input.component';
+import { UserService } from '../../../service/user/user.service';
+import { User } from '../../../model/user/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +20,17 @@ import { InputComponent } from '../../../components/form/input/input.component';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private fb: FormBuilder) {}
+  userExists?: boolean | null;
+  
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
   });
 
   updateValue(input: string, value: any) {
@@ -28,11 +38,28 @@ export class LoginComponent {
       case 'email':
         this.loginForm.controls['email'].setValue(value);
         break;
+      case 'password':
+        this.loginForm.controls['password'].setValue(value);
+        break;
     }
   }
 
   submit() {
-    // TODO: handle submit
-    console.log('handle submit');
+    this.userService
+      .authenticate(
+        this.loginForm.controls['email'].value!,
+        this.loginForm.controls['password'].value!
+      )
+      .subscribe((user) => {
+        if (Object.keys(user).length == 0) {
+          this.userExists = false;
+        } else {
+          this.userExists = true;
+          for (const [key, value] of Object.entries(user)) {
+            localStorage.setItem('auth', JSON.stringify({ user: value }));
+          }
+          this.router.navigate(['/dashboard']);
+        }
+      });
   }
 }

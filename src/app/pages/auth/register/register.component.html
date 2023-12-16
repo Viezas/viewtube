@@ -1,4 +1,70 @@
 <app-guest-layout>
-  <div>Register page</div>
-  <!-- TODO: Create register form and handle submit -->
+  <div class="flex justify-center">
+    <form
+      class="flex flex-col gap-y-4 w-full md:w-1/3 border border-synth-blue-600 rounded-md p-8 bg-synth-pink-950"
+      [formGroup]="registerForm"
+      (ngSubmit)="submit()"
+    >
+      <h3 class="text-xl font-semibold text-center">Inscription</h3>
+      <h4
+        *ngIf="userExists"
+        class="text-red-600 text-center font-semibold text-lg"
+      >
+        Impossible de créer un utilisateur avec ces informations
+      </h4>
+      <app-input
+        [value]="registerForm.value.email"
+        (newValue)="updateValue('email', $event)"
+        [required]="true"
+      >
+        <p label>Email</p>
+        <div errors>
+          <small *ngIf="registerForm.get('email')?.hasError('required')">
+            This field is required.
+          </small>
+          <small *ngIf="registerForm.get('email')?.hasError('email')">
+            This field must be a valid email
+          </small>
+        </div>
+      </app-input>
+
+      <app-input
+        [value]="registerForm.value.username"
+        (newValue)="updateValue('username', $event)"
+        [required]="true"
+      >
+        <p label>Nom d'utilisateur</p>
+        <div errors>
+          <small *ngIf="registerForm.get('username')?.hasError('required')">
+            This field is required.
+          </small>
+        </div>
+      </app-input>
+
+      <app-input
+        [value]="registerForm.value.password"
+        (newValue)="updateValue('password', $event)"
+        [required]="true"
+        [type]="'password'"
+      >
+        <p label>Mot de passe</p>
+        <div errors>
+          <small *ngIf="registerForm.get('password')?.hasError('required')">
+            This field is required.
+          </small>
+        </div>
+      </app-input>
+
+      <button
+        [disabled]="!this.registerForm.valid"
+        type="submit"
+        class="py-2 text-white rounded-md bg-synth-blue-400 hover:bg-synth-blue-500 disabled:bg-synth-blue-300"
+      >
+        Inscription
+      </button>
+      <a href="/login" class="text-sm text-right hover:underline"
+        >Vous avez déjà ? Connectez-vous</a
+      >
+    </form>
+  </div>
 </app-guest-layout>

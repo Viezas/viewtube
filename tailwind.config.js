@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "synth-pink": {
+        "synth-purple": {
           50: "#fff1fb",
           100: "#ffe1f8",
           200: "#ffc3f2",

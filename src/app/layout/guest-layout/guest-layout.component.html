@@ -8,7 +8,7 @@
       routerLink="/login"
       class="text-synth-blue-400 hover:underline hover:cursor-pointer"
     >
-      Connexion/Inscription
+      {{ isAuth ? "Dashboard" : "Connexion/Inscription" }}
     </a>
   </div>
   <div class="min-h-[90vh] bg-synth-gray-950 p-10 text-synth-blue-400">
