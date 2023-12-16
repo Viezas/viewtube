@@ -9,7 +9,11 @@
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
     >
-      <app-video *ngFor="let video of videos; let key = index" [video]="video"></app-video>
+      <app-video
+        *ngFor="let video of videos; let key = index"
+        [video]="video"
+      ></app-video>
+
       <p *ngIf="videos.length === 0" class="col-span-full text-center">
         Pas de video à afficher
       </p>

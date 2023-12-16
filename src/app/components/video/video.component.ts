@@ -26,6 +26,10 @@ export class VideoComponent {
         this.router.navigate(['/videos/' + this.video.id]);
         break;
 
+      case '/':
+        this.router.navigate(['/show/' + this.video.id]);
+        break;
+
       default:
         this.router.navigate(['/']);
         break;
