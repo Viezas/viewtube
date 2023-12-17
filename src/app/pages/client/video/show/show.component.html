@@ -1,8 +1,16 @@
-<app-client-layout>
-  <div class="flex flex-col gap-y-10">
+<app-guest-layout>
+  <div class="video-container">
     <h1 appPageTitle>
-      {{ video ? "Show video n° " + videoId : "Aucune vidéo " }}
+      {{ video ? "Show video n° " + videoId : "Aucune vidéo trouvée" }}
     </h1>
-    <div class="grid grid-cols-2 gap-8"></div>
+    <youtube-player [videoId]="youtubeVideoId"></youtube-player>
   </div>
-</app-client-layout>
+
+  <div class="other-videos">
+    <app-video
+      *ngFor="let video of otherVideos; let key = index"
+      [video]="video"
+      class="other-video"
+    ></app-video>
+  </div>
+</app-guest-layout>

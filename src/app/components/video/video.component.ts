@@ -31,7 +31,12 @@ export class VideoComponent {
         break;
 
       default:
-        this.router.navigate(['/']);
+        if (this.currentRoute.startsWith('/show/')) {
+          this.router.navigate(['/show/' + this.video.id]);
+        } else {
+          console.log('La current : ' + this.currentRoute);
+          this.router.navigate(['/']);
+        }
         break;
     }
   }

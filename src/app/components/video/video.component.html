@@ -1,4 +1,8 @@
-<div (click)="redirect()" class="h-full bg-synth-dark-950 rounded-md hover:cursor-pointer hover:underline">
+<div
+  (click)="redirect()"
+  class="h-full bg-synth-dark-950 rounded-md hover:cursor-pointer hover:underline"
+>
+  <div id="player"></div>
   <img [src]="video.url | videoThumbnail" class="w-full h-56 rounded-t-md" />
   <div class="p-4">
     <h3>{{ video.title | substring : 40 }}</h3>

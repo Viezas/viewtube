@@ -1,0 +1,14 @@
+.video-container {
+  float: left;
+  width: 70%;
+}
+
+.other-videos {
+  float: right;
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.other-video {
+  padding: 1em;
+}
