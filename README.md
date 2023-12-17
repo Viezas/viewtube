@@ -10,3 +10,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Database
 
 Run `ng start-db` to start json-server database
+
+
+## Members
+
+Timéra Boubacar
+Benamar Djebril
+Ngauv Victor
